@@ -1,36 +1,165 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Perfect 🚀 I’ll generate a **professional and polished README.md** for your project.
+Here’s a full version you can drop straight into your repo 👇
 
-## Getting Started
+---
 
-First, run the development server:
+```markdown
+# 🎉 Events App (Next.js + Supabase)
+
+A modern event management platform built with **Next.js 14 (App Router)**, **Supabase (Postgres + Auth)**, and **Tailwind CSS**.  
+Users can browse events, view details, and RSVP in real time.
+
+---
+
+## ✨ Features
+✅ Browse upcoming events  
+✅ View event details  
+✅ RSVP to events (Yes / No / Maybe)  
+✅ Supabase as a backend (Postgres + API)  
+✅ Responsive UI with Tailwind CSS  
+✅ Deployed seamlessly on Vercel  
+
+---
+
+## 🛠 Tech Stack
+- [Next.js 14](https://nextjs.org/) – React framework with App Router
+- [Supabase](https://supabase.com/) – Backend as a Service (Postgres + Auth + API)
+- [Tailwind CSS](https://tailwindcss.com/) – Utility-first styling
+- [Vercel](https://vercel.com/) – Deployment
+
+---
+
+## 📂 Project Structure
+```
+
+events-app/
+ ├─ app/
+ │   ├─ events/
+ │   │   ├─ page.js       // Events list page
+ │   │   ├─ [id]/page.js  // Single event + RSVP form
+ │   ├─ page.js           // Homepage
+ │
+ ├─ lib/
+ │   └─ supabaseClient.js // Supabase connection
+ │
+ ├─ public/
+ │   └─ favicon.ico
+ │
+ ├─ styles/
+ │   └─ globals.css       // Tailwind / global styles
+ │
+ ├─ .gitignore
+ ├─ package.json
+ ├─ README.md
+ └─ next.config.js
+
+
+````
+
+---
+
+## ⚙️ Setup & Installation
+
+1️⃣ **Clone the repo**
+```bash
+git clone https://github.com/ShivamSunny26/events-app.git
+cd events-app
+````
+
+2️⃣ **Install dependencies**
+
+```bash
+npm install
+```
+
+3️⃣ **Configure environment variables**
+Create a file named `.env.local` in the project root and add:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+4️⃣ **Run locally**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+App will be live at 👉 [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌍 Deployment
 
-## Learn More
+This project is deployed on **Vercel**.
+🔗 Live Demo: [https://kiyqtrtksissuqanfcjo.supabase.co]
+(https://kiyqtrtksissuqanfcjo.supabase.co)
+---
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🏠 Home Page
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+*Displays upcoming events list.*
 
-## Deploy on Vercel
+### 📅 Event Detail
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+*View event description + RSVP form.*
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📖 Database Schema (Supabase)
+
+**Users**
+
+```sql
+id (uuid) PK
+name (text)
+email (text)
+created_at (timestamp)
+```
+
+**Events**
+
+```sql
+id (uuid) PK
+title (text)
+description (text)
+date (date)
+city (text)
+created_by (uuid) FK → Users.id
+```
+
+**RSVPs**
+
+```sql
+id (uuid) PK
+user_id (uuid) FK → Users.id
+event_id (uuid) FK → Events.id
+status (enum: 'Yes', 'No', 'Maybe')
+```
+
+---
+
+## 👨‍💻 Author
+
+Built with ❤️ by **Your Name**
+🔗 GitHub: [@yourusername](https://github.com/ShivamSunny26)
+---
+
+## ⭐ Contributing
+
+Contributions are welcome! Feel free to fork this repo and submit a pull request.
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+```
+
+---
+
+Would you like me to also **add screenshots placeholders (with Markdown `![image]()` tags)** so that once you take real screenshots of your app, you can just drop them in?
+```
