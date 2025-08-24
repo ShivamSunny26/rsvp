@@ -1,24 +1,20 @@
-import { supabase } from "../lib/supabaseClient";
+import Link from "next/link";
 
-export default async function Home() {
-  const { data: events, error } = await supabase
-    .from("events")
-    .select("id, title, city, date");
-
-  if (error) {
-    return <p>Error: {error.message}</p>;
-  }
-
+export default function Home() {
   return (
-    <main className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Events from Supabase</h1>
-      <ul>
-        {events?.map(ev => (
-          <li key={ev.id}>
-            {ev.title} – {ev.city} ({new Date(ev.date).toDateString()})
-          </li>
-        ))}
-      </ul>
+    <main className="min-h-screen flex items-center justify-center p-6">
+      <div className="max-w-xl w-full text-center">
+        <h1 className="text-3xl font-bold mb-3">Events App</h1>
+        <p className="text-gray-300 mb-6">
+          Browse upcoming events and RSVP in a click.
+        </p>
+        <Link
+          href="/events"
+          className="inline-block bg-white text-gray-900 rounded-xl px-4 py-2 font-medium"
+        >
+          View Events
+        </Link>
+      </div>
     </main>
   );
 }
